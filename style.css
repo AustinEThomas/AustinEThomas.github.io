@@ -295,7 +295,8 @@ p {
     background: rgba(255, 255, 255, 0.75);
     box-shadow: var(--shadow);
     backdrop-filter: blur(20px);
-    transform: rotate(1.5deg);
+
+    transform: translateY(-70px) rotate(1.5deg);
 }
 
 .status-badge {
