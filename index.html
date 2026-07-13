@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Austin Thomas - Data Engineer and Analyst portfolio">
+    <title>Austin Thomas | Data Engineer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar container">
+            <a href="#home" class="logo">AT<span>.</span></a>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact" class="nav-contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-background"></div>
+
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <p class="eyebrow">DATA ENGINEER · ANALYST · DEVELOPER</p>
+
+                    <h1>
+                        I build data systems that turn
+                        <span>complex information</span>
+                        into useful decisions.
+                    </h1>
+
+                    <p class="hero-description">
+                        I'm Austin Thomas, a data engineer and analyst based in
+                        Indiana. I design dashboards, ETL pipelines, API
+                        integrations, databases, and internal applications that
+                        solve real business problems.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="button button-primary">View My Work</a>
+                        <a href="#contact" class="button button-secondary">Contact Me</a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div>
+                            <strong>8+</strong>
+                            <span>Power BI Dashboards</span>
+                        </div>
+                        <div>
+                            <strong>20+</strong>
+                            <span>Database Tables</span>
+                        </div>
+                        <div>
+                            <strong>8+</strong>
+                            <span>Python Applications</span>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="hero-card">
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Open to opportunities
+                    </div>
+
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <pre><code><span class="code-purple">const</span> developer = {
+  name: <span class="code-green">"Austin Thomas"</span>,
+  role: <span class="code-green">"Data Engineer"</span>,
+  location: <span class="code-green">"Indiana"</span>,
+  skills: [
+    <span class="code-green">"Python"</span>,
+    <span class="code-green">"SQL"</span>,
+    <span class="code-green">"Power BI"</span>,
+    <span class="code-green">"APIs"</span>
+  ],
+  passion: <span class="code-green">"Building useful systems"</span>
+};</code></pre>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="container two-column">
+                <div>
+                    <p class="section-label">ABOUT ME</p>
+                    <h2>Building practical solutions with data and technology.</h2>
+                </div>
+
+                <div class="about-copy">
+                    <p>
+                        I enjoy taking disconnected data, manual processes, and
+                        complicated business problems and turning them into
+                        reliable systems that people can actually use.
+                    </p>
+                    <p>
+                        My work includes Python automation, Streamlit
+                        applications, Power BI reporting, MySQL databases,
+                        REST API integrations, Amazon RDS, Power Query, DAX,
+                        and process improvement.
+                    </p>
+                    <a href="#contact" class="text-link">Let's work together →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-dark" id="skills">
+            <div class="container">
+                <p class="section-label">TECHNICAL SKILLS</p>
+                <h2>Tools I use to build complete data solutions.</h2>
+
+                <div class="skills-grid">
+                    <article class="skill-card">
+                        <div class="skill-icon">01</div>
+                        <h3>Data Engineering</h3>
+                        <p>ETL pipelines, data modeling, validation, automation, and database design.</p>
+                        <div class="tag-list">
+                            <span>Python</span>
+                            <span>MySQL</span>
+                            <span>Amazon RDS</span>
+                            <span>SQL</span>
+                        </div>
+                    </article>
+
+                    <article class="skill-card">
+                        <div class="skill-icon">02</div>
+                        <h3>Analytics</h3>
+                        <p>Interactive reporting that turns business data into clear, actionable insights.</p>
+                        <div class="tag-list">
+                            <span>Power BI</span>
+                            <span>DAX</span>
+                            <span>Power Query</span>
+                            <span>Excel</span>
+                        </div>
+                    </article>
+
+                    <article class="skill-card">
+                        <div class="skill-icon">03</div>
+                        <h3>Application Development</h3>
+                        <p>Internal tools and web applications designed around real operational workflows.</p>
+                        <div class="tag-list">
+                            <span>Streamlit</span>
+                            <span>REST APIs</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="section-heading-row">
+                    <div>
+                        <p class="section-label">FEATURED PROJECTS</p>
+                        <h2>A selection of systems and tools I've built.</h2>
+                    </div>
+
+                    <a
+                        href="https://github.com/YOUR-GITHUB-USERNAME"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-link"
+                    >
+                        View GitHub →
+                    </a>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-preview preview-one">
+                            <span>Power BI</span>
+                            <div class="mini-dashboard">
+                                <div class="mini-kpi"></div>
+                                <div class="mini-kpi"></div>
+                                <div class="mini-kpi"></div>
+                                <div class="mini-chart"></div>
+                            </div>
+                        </div>
+
+                        <div class="project-content">
+                            <p class="project-type">BUSINESS INTELLIGENCE</p>
+                            <h3>Employee Pay Dashboard</h3>
+                            <p>
+                                A management dashboard for monitoring regular
+                                pay, overtime, paid time off, holiday pay, and
+                                payroll trends.
+                            </p>
+                            <div class="project-tags">
+                                <span>Power BI</span>
+                                <span>DAX</span>
+                                <span>MySQL</span>
+                            </div>
+                            <a href="#" class="project-link">View project →</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-preview preview-two">
+                            <span>Python + APIs</span>
+                            <div class="pipeline">
+                                <div>API</div>
+                                <span>→</span>
+                                <div>Python</div>
+                                <span>→</span>
+                                <div>RDS</div>
+                            </div>
+                        </div>
+
+                        <div class="project-content">
+                            <p class="project-type">DATA ENGINEERING</p>
+                            <h3>Paycor Data Integration</h3>
+                            <p>
+                                An automated Python integration that retrieves
+                                employee, timecard, and payroll information and
+                                stores it in Amazon RDS.
+                            </p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>REST API</span>
+                                <span>Amazon RDS</span>
+                            </div>
+                            <a href="#" class="project-link">View project →</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-preview preview-three">
+                            <span>Streamlit</span>
+                            <div class="app-window">
+                                <div class="app-sidebar"></div>
+                                <div class="app-content">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-content">
+                            <p class="project-type">APPLICATION DEVELOPMENT</p>
+                            <h3>Scheduler Control Center</h3>
+                            <p>
+                                A Streamlit application for reviewing schedule
+                                changes, deployment conflicts, missing records,
+                                and database updates.
+                            </p>
+                            <div class="project-tags">
+                                <span>Streamlit</span>
+                                <span>Python</span>
+                                <span>SQL</span>
+                            </div>
+                            <a href="#" class="project-link">View project →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-muted" id="experience">
+            <div class="container">
+                <p class="section-label">EXPERIENCE</p>
+                <h2>What I currently work on.</h2>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div>
+                            <h3>Data Engineer & Analyst</h3>
+                            <p>Accurate Manufactured Products Group</p>
+                        </div>
+                        <span>Indiana</span>
+                    </div>
+
+                    <ul>
+                        <li>
+                            Develop and maintain Power BI dashboards for
+                            operational, customer, scheduling, and payroll data.
+                        </li>
+                        <li>
+                            Build Python ETL processes and API integrations
+                            connecting third-party systems to MySQL databases.
+                        </li>
+                        <li>
+                            Design Streamlit applications that support internal
+                            workflows, data validation, and administration.
+                        </li>
+                        <li>
+                            Improve reporting accuracy by building reusable SQL,
+                            Power Query, and DAX solutions.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-section" id="contact">
+            <div class="container contact-wrapper">
+                <div>
+                    <p class="section-label">GET IN TOUCH</p>
+                    <h2>Have a project, role, or idea you'd like to discuss?</h2>
+                    <p>
+                        I'm interested in data engineering, analytics,
+                        automation, application development, and opportunities
+                        to build useful products.
+                    </p>
+                </div>
+
+                <div class="contact-links">
+                    <a href="mailto:YOUR-EMAIL@example.com">
+                        <span>Email</span>
+                        <strong>YOUR-EMAIL@example.com</strong>
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/YOUR-LINKEDIN"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>LinkedIn</span>
+                        <strong>Connect with me</strong>
+                    </a>
+
+                    <a
+                        href="https://github.com/YOUR-GITHUB-USERNAME"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>GitHub</span>
+                        <strong>View my repositories</strong>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>© <span id="currentYear"></span> Austin Thomas</p>
+            <p>Built with HTML, CSS, and JavaScript.</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
