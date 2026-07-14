@@ -993,6 +993,17 @@ p {
     .experience-card {
         padding: 26px;
     }
+    .about-cards {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        gap: 24px;
+        margin-top: 44px;
+    }
+
+    .about-highlight-card {
+        width: 100%;
+        padding: 28px 24px;
+    }
 }
 
 @media (max-width: 480px) {
