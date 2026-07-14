@@ -91,6 +91,35 @@ const revealObserver = new IntersectionObserver(
     }
 );
 
+async function loadSiteData() {
+    try {
+        const response = await fetch("data/site-data.json");
+
+        if (!response.ok) {
+            throw new Error(`Failed to load site data: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        document.getElementById("powerBiDashboards").textContent =
+            data.stats.powerBiDashboards;
+
+        document.getElementById("databaseTables").textContent =
+            data.stats.databaseTables;
+
+        document.getElementById("pythonStreamlitApps").textContent =
+            data.stats.pythonStreamlitApps;
+    } catch (error) {
+        console.error(error);
+
+        document.getElementById("powerBiDashboards").textContent = "6+";
+        document.getElementById("databaseTables").textContent = "20+";
+        document.getElementById("pythonStreamlitApps").textContent = "8+";
+    }
+}
+
+loadSiteData();
+
 revealElements.forEach((element) => {
     revealObserver.observe(element);
 });
