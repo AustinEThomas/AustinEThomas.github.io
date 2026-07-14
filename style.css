@@ -999,6 +999,11 @@ p {
     .container {
         width: min(var(--container), calc(100% - 28px));
     }
+   
+   .project-preview-image {
+    max-width: 100%;
+    max-height: 170px;
+    }
 
     .hero-actions .button {
         width: 100%;
