@@ -599,6 +599,28 @@ p {
     grid-column: 1 / -1;
 }
 
+/* Real project screenshot previews */
+.project-preview-image {
+    display: block;
+    width: 100%;
+    max-width: 310px;
+    height: auto;
+    max-height: 190px;
+    object-fit: contain;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 12px 30px rgba(16, 24, 40, 0.12);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover .project-preview-image {
+    transform: scale(1.025);
+    box-shadow: 0 16px 36px rgba(16, 24, 40, 0.16);
+}
+
 .pipeline {
     display: flex;
     align-items: center;
