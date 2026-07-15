@@ -920,21 +920,20 @@ body.menu-open .site-header {
     }
 
    .nav-links {
-       position: fixed;
-       top: 76px;
+       position: absolute;
+       top: 100%;
        right: 0;
-       bottom: 0;
        left: 0;
        z-index: 999;
    
        display: flex;
+       height: calc(100dvh - 76px);
        flex-direction: column;
        align-items: stretch;
        justify-content: flex-start;
    
        gap: 0;
        padding: 28px 20px;
-   
        overflow-y: auto;
    
        background: var(--background);
