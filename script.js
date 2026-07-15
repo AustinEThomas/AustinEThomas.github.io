@@ -69,14 +69,6 @@ function updateActiveNavigation() {
 }
 
 // Add subtle reveal animations to major page elements.
-const revealElements = document.querySelectorAll(
-    ".skill-card, .project-card, .experience-card, .about-copy, .contact-links"
-);
-
-revealElements.forEach((element) => {
-    element.classList.add("reveal");
-});
-
 const revealObserver = new IntersectionObserver(
     (entries, observer) => {
         entries.forEach((entry) => {
@@ -90,6 +82,22 @@ const revealObserver = new IntersectionObserver(
         threshold: 0.12
     }
 );
+
+function initializeRevealAnimations(parent = document) {
+    const revealElements = parent.querySelectorAll(
+        ".skill-card, .project-card, .experience-card, .about-copy, .contact-links"
+    );
+
+    revealElements.forEach((element) => {
+        if (element.dataset.revealInitialized === "true") {
+            return;
+        }
+
+        element.dataset.revealInitialized = "true";
+        element.classList.add("reveal");
+        revealObserver.observe(element);
+    });
+}
 
 async function loadSiteData() {
     try {
@@ -114,6 +122,230 @@ async function loadSiteData() {
     }
 }
 
+function updateSiteStats(stats) {
+    if (!stats) {
+        return;
+    }
+
+    const powerBiDashboards =
+        document.getElementById("powerBiDashboards");
+
+    const databaseTables =
+        document.getElementById("databaseTables");
+
+    const pythonStreamlitApps =
+        document.getElementById("pythonStreamlitApps");
+
+    if (powerBiDashboards) {
+        powerBiDashboards.textContent =
+            stats.powerBiDashboards ?? "6+";
+    }
+
+    if (databaseTables) {
+        databaseTables.textContent =
+            stats.databaseTables ?? "20+";
+    }
+
+    if (pythonStreamlitApps) {
+        pythonStreamlitApps.textContent =
+            stats.pythonStreamlitApps ?? "8+";
+    }
+}
+
+function renderProjects(projects) {
+    const projectsGrid = document.getElementById("projectsGrid");
+
+    if (!projectsGrid) {
+        return;
+    }
+
+    if (!Array.isArray(projects) || projects.length === 0) {
+        projectsGrid.innerHTML = `
+            <p class="projects-empty">
+                No projects are currently available.
+            </p>
+        `;
+
+        return;
+    }
+
+    projectsGrid.innerHTML = projects
+        .map((project) => createProjectCard(project))
+        .join("");
+
+    initializeRevealAnimations(projectsGrid);
+}
+
+function createProjectCard(project) {
+    const tags = Array.isArray(project.tags)
+        ? project.tags
+            .map((tag) => `<span>${escapeHtml(tag)}</span>`)
+            .join("")
+        : "";
+
+    const projectLink = project.link
+        ? `
+            <a
+                href="${escapeAttribute(project.link)}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+            >
+                ${escapeHtml(project.linkText || "View Project →")}
+            </a>
+        `
+        : "";
+
+    return `
+        <article class="project-card">
+            ${createProjectPreview(project)}
+
+            <div class="project-content">
+                <p class="project-type">
+                    ${escapeHtml(project.type || "")}
+                </p>
+
+                <h3>${escapeHtml(project.title || "")}</h3>
+
+                <p>
+                    ${escapeHtml(project.description || "")}
+                </p>
+
+                <div class="project-tags">
+                    ${tags}
+                </div>
+
+                ${projectLink}
+            </div>
+        </article>
+    `;
+}
+
+function createProjectPreview(project) {
+    const previewClass =
+        project.previewClass || "preview-one";
+
+    const previewLabel = project.previewLabel
+        ? `<span>${escapeHtml(project.previewLabel)}</span>`
+        : "";
+
+    switch (project.previewType) {
+        case "image":
+            return createImagePreview(project, previewClass);
+
+        case "pipeline":
+            return createPipelinePreview(
+                project,
+                previewClass,
+                previewLabel
+            );
+
+        case "app-window":
+            return `
+                <div class="project-preview ${escapeAttribute(previewClass)}">
+                    ${previewLabel}
+
+                    <div class="app-window">
+                        <div class="app-sidebar"></div>
+
+                        <div class="app-content">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+        case "mini-dashboard":
+            return `
+                <div class="project-preview ${escapeAttribute(previewClass)}">
+                    ${previewLabel}
+
+                    <div class="mini-dashboard">
+                        <div class="mini-kpi"></div>
+                        <div class="mini-kpi"></div>
+                        <div class="mini-kpi"></div>
+                        <div class="mini-chart"></div>
+                    </div>
+                </div>
+            `;
+
+        default:
+            return `
+                <div class="project-preview ${escapeAttribute(previewClass)}">
+                    ${previewLabel}
+                </div>
+            `;
+    }
+}
+
+function createImagePreview(project, previewClass) {
+    if (!project.image) {
+        return `
+            <div class="project-preview ${escapeAttribute(previewClass)}">
+            </div>
+        `;
+    }
+
+    return `
+        <div class="project-preview ${escapeAttribute(previewClass)}">
+            <img
+                src="${escapeAttribute(project.image)}"
+                alt="${escapeAttribute(project.imageAlt || project.title || "Project preview")}"
+                class="project-preview-image"
+                loading="lazy"
+            >
+        </div>
+    `;
+}
+
+function createPipelinePreview(
+    project,
+    previewClass,
+    previewLabel
+) {
+    const steps = Array.isArray(project.pipelineSteps)
+        ? project.pipelineSteps
+        : [];
+
+    const pipelineHtml = steps
+        .map((step, index) => {
+            const arrow = index < steps.length - 1
+                ? "<span>→</span>"
+                : "";
+
+            return `
+                <div>${escapeHtml(step)}</div>
+                ${arrow}
+            `;
+        })
+        .join("");
+
+    return `
+        <div class="project-preview ${escapeAttribute(previewClass)}">
+            ${previewLabel}
+
+            <div class="pipeline">
+                ${pipelineHtml}
+            </div>
+        </div>
+    `;
+}
+
+function escapeHtml(value) {
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
+
+function escapeAttribute(value) {
+    return escapeHtml(value);
+}
+
 loadSiteData();
 
 revealElements.forEach((element) => {
@@ -121,4 +353,6 @@ revealElements.forEach((element) => {
 });
 
 // Run once when the page first loads.
+initializeRevealAnimations();
+loadSiteData();
 updateActiveNavigation();
