@@ -235,7 +235,10 @@ function createProjectPreview(project) {
     switch (project.previewType) {
         case "image":
             return createImagePreview(project, previewClass);
-
+            
+        case "image-gallery":
+            return createImageGalleryPreview(project, previewClass);
+            
         case "pipeline":
             return createPipelinePreview(
                 project,
@@ -299,6 +302,46 @@ function createImagePreview(project, previewClass) {
                 class="project-preview-image"
                 loading="lazy"
             >
+        </div>
+    `;
+}
+
+function createImageGalleryPreview(project, previewClass) {
+    const images = Array.isArray(project.images)
+        ? project.images.slice(0, 2)
+        : [];
+
+    if (images.length === 0) {
+        return `
+            <div class="project-preview ${escapeAttribute(previewClass)}">
+            </div>
+        `;
+    }
+
+    const galleryItems = images
+        .map((image) => {
+            const label = image.label
+                ? `<span class="project-gallery-label">${escapeHtml(image.label)}</span>`
+                : "";
+
+            return `
+                <div class="project-gallery-item">
+                    <img
+                        src="${escapeAttribute(image.src || "")}"
+                        alt="${escapeAttribute(image.alt || project.title || "Project preview")}"
+                        loading="lazy"
+                    >
+                    ${label}
+                </div>
+            `;
+        })
+        .join("");
+
+    return `
+        <div class="project-preview project-preview-gallery ${escapeAttribute(previewClass)}">
+            <div class="project-gallery">
+                ${galleryItems}
+            </div>
         </div>
     `;
 }
