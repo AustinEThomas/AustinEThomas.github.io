@@ -60,19 +60,19 @@
 
     {
       "type": "APPLICATION DEVELOPMENT",
-      "title": "Manufacturing Scheduler Control Center",
-      "description": "A centralized Streamlit platform supporting manufacturing scheduling, deployment validation, operational controls, conflict review, and missing-record analysis.",
+      "title": "Manufacturing Scheduler Tools",
+      "description": "A Streamlit application built to support manufacturing scheduling through machine rule management, scheduler validation, deployment review, and operational support utilities.",
       "tags": [
         "Python",
         "Streamlit",
-        "MySQL",
         "SQL"
       ],
-      "previewType": "app-window",
+      "previewType": "image",
       "previewClass": "preview-three",
-      "previewLabel": "Streamlit",
-      "link": "",
-      "linkText": ""
+      "image": "images/scheduler-rules-editor.png",
+      "imageAlt": "Manufacturing Scheduler Tools application showing machine rule management and scheduler validation modules",
+      "link": "https://github.com/AustinEThomas/manufacturing-scheduler-tools",
+      "linkText": "View Project →"
     },
 
     {
