@@ -320,18 +320,15 @@ function createImageGalleryPreview(project, previewClass) {
 
     const galleryItems = images
         .map((image) => {
-            const label = image.label
-                ? `<span class="project-gallery-label">${escapeHtml(image.label)}</span>`
-                : "";
-
             return `
                 <div class="project-gallery-item">
                     <img
                         src="${escapeAttribute(image.src || "")}"
-                        alt="${escapeAttribute(image.alt || project.title || "Project preview")}"
+                        alt="${escapeAttribute(
+                            image.alt || project.title || "Project preview"
+                        )}"
                         loading="lazy"
                     >
-                    ${label}
                 </div>
             `;
         })
