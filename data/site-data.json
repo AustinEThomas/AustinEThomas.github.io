@@ -26,12 +26,11 @@
       "tags": [
         "Power BI",
         "DAX",
-        "Power Query",
-        "Excel"
+        "Power Query"
       ],
       "previewType": "image",
       "previewClass": "preview-one",
-      "image": "images/Sales_Analytics_Dashboard.png",
+      "image": "images/sales-analytics-dashboard.png",
       "imageAlt": "Sales Analytics Dashboard overview showing sales KPIs, shipment trends, goals, and gross margin",
       "link": "https://github.com/AustinEThomas/sales-analytics-dashboard",
       "linkText": "View Project →"
@@ -97,22 +96,22 @@
       "linkText": ""
     },
 
-    {
-      "type": "BUSINESS INTELLIGENCE",
-      "title": "Customer Priority Dashboard",
-      "description": "A Power BI reporting solution that combines customer demand, open orders, inventory, and production data to help manufacturing teams prioritize work and improve operational visibility.",
-      "tags": [
-        "Power BI",
-        "SQL",
-        "MySQL",
-        "DAX"
-      ],
-      "previewType": "mini-dashboard",
-      "previewClass": "preview-one",
-      "previewLabel": "Power BI + SQL",
-      "link": "",
-      "linkText": ""
-    },
+  {
+    "type": "BUSINESS INTELLIGENCE",
+    "title": "Customer Priority Dashboard",
+    "description": "An interactive Power BI dashboard designed to help manufacturing teams prioritize customer demand by combining inventory availability, purchase orders, and open sales orders into a single operational reporting solution.",
+    "tags": [
+      "Power BI",
+      "DAX",
+      "Power Query"
+    ],
+    "previewType": "image",
+    "previewClass": "preview-one",
+    "image": "images/customer-priority-dashboard.png",
+    "imageAlt": "Customer Priority Dashboard showing customer priorities, inventory availability, purchase orders, and operational KPIs",
+    "link": "https://github.com/AustinEThomas/customer-priority-dashboard",
+    "linkText": "View Project →"
+  },
 
     {
       "type": "SYSTEM INTEGRATION",
