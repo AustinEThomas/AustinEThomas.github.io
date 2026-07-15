@@ -37,28 +37,6 @@
     },
 
     {
-      "type": "DATA ENGINEERING",
-      "title": "Paycor Workforce Reporting Integration",
-      "description": "Automated workforce reporting integrations that retrieve employee, labor, department, timecard, and payroll data and store it in MySQL databases hosted on Amazon RDS.",
-      "tags": [
-        "Python",
-        "REST API",
-        "MySQL",
-        "Amazon RDS"
-      ],
-      "previewType": "pipeline",
-      "previewClass": "preview-two",
-      "previewLabel": "Python + APIs",
-      "pipelineSteps": [
-        "API",
-        "Python",
-        "RDS"
-      ],
-      "link": "",
-      "linkText": ""
-    },
-
-    {
       "type": "APPLICATION DEVELOPMENT",
       "title": "Manufacturing Scheduler Tools",
       "description": "A Streamlit application built to support manufacturing scheduling through machine rule management, scheduler validation, deployment review, and support utilities.",
@@ -84,65 +62,22 @@
       "link": "https://github.com/AustinEThomas/manufacturing-scheduler-tools",
       "linkText": "View Project →"
     },
-
+      
     {
-      "type": "AUTOMATION",
-      "title": "Production Scheduling Automation",
-      "description": "Automated manufacturing scheduling and validation workflows to reduce manual effort, improve consistency, and support production planning.",
+      "type": "BUSINESS INTELLIGENCE",
+      "title": "Customer Priority Dashboard",
+      "description": "An interactive Power BI dashboard designed to help manufacturing teams prioritize customer demand by combining inventory availability, purchase orders, and open sales orders into a single operational reporting solution.",
       "tags": [
-        "Python",
-        "SQL",
-        "Automation"
+        "Power BI",
+        "DAX",
+        "Power Query"
       ],
-      "previewType": "pipeline",
-      "previewClass": "preview-two",
-      "previewLabel": "Python + SQL",
-      "pipelineSteps": [
-        "Orders",
-        "Logic",
-        "Schedule"
-      ],
-      "link": "",
-      "linkText": ""
+      "previewType": "image",
+      "previewClass": "preview-one",
+      "image": "images/customer-priority-dashboard.png",
+      "imageAlt": "Customer Priority Dashboard showing customer priorities, inventory availability, purchase orders, and operational KPIs",
+      "link": "https://github.com/AustinEThomas/customer-priority-dashboard",
+      "linkText": "View Project →"
     },
-
-  {
-    "type": "BUSINESS INTELLIGENCE",
-    "title": "Customer Priority Dashboard",
-    "description": "An interactive Power BI dashboard designed to help manufacturing teams prioritize customer demand by combining inventory availability, purchase orders, and open sales orders into a single operational reporting solution.",
-    "tags": [
-      "Power BI",
-      "DAX",
-      "Power Query"
-    ],
-    "previewType": "image",
-    "previewClass": "preview-one",
-    "image": "images/customer-priority-dashboard.png",
-    "imageAlt": "Customer Priority Dashboard showing customer priorities, inventory availability, purchase orders, and operational KPIs",
-    "link": "https://github.com/AustinEThomas/customer-priority-dashboard",
-    "linkText": "View Project →"
-  },
-
-    {
-      "type": "SYSTEM INTEGRATION",
-      "title": "TBE ERP Automation",
-      "description": "Multiple ERP API integrations supporting inventory, orders, shipments, scheduling, and operational reporting workflows.",
-      "tags": [
-        "Python",
-        "REST API",
-        "ERP",
-        "MySQL"
-      ],
-      "previewType": "pipeline",
-      "previewClass": "preview-three",
-      "previewLabel": "ERP APIs",
-      "pipelineSteps": [
-        "TBE",
-        "Python",
-        "Reports"
-      ],
-      "link": "",
-      "linkText": ""
-    }
   ]
 }
