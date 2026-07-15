@@ -114,42 +114,45 @@ async function loadSiteData() {
     } catch (error) {
         console.error(error);
 
-        updateSiteStats({
-            powerBiDashboards: "6+",
-            databaseTables: "20+",
-            pythonStreamlitApps: "8+"
-        });
+        updateSiteStats([
+            {
+                value: "6+",
+                label: "Power BI Dashboards"
+            },
+            {
+                value: "20+",
+                label: "Database Tables"
+            },
+            {
+                value: "8+",
+                label: "Python & Streamlit Apps"
+            }
+        ]);
     }
 }
 
 function updateSiteStats(stats) {
-    if (!stats) {
+    const heroStats = document.getElementById("heroStats");
+
+    if (!heroStats) {
         return;
     }
 
-    const powerBiDashboards =
-        document.getElementById("powerBiDashboards");
-
-    const databaseTables =
-        document.getElementById("databaseTables");
-
-    const pythonStreamlitApps =
-        document.getElementById("pythonStreamlitApps");
-
-    if (powerBiDashboards) {
-        powerBiDashboards.textContent =
-            stats.powerBiDashboards ?? "6+";
+    if (!Array.isArray(stats) || stats.length === 0) {
+        heroStats.innerHTML = "";
+        return;
     }
 
-    if (databaseTables) {
-        databaseTables.textContent =
-            stats.databaseTables ?? "20+";
-    }
-
-    if (pythonStreamlitApps) {
-        pythonStreamlitApps.textContent =
-            stats.pythonStreamlitApps ?? "8+";
-    }
+    heroStats.innerHTML = stats
+        .map((stat) => {
+            return `
+                <div>
+                    <strong>${escapeHtml(stat.value || "")}</strong>
+                    <span>${escapeHtml(stat.label || "")}</span>
+                </div>
+            `;
+        })
+        .join("");
 }
 
 function renderProjects(projects) {
