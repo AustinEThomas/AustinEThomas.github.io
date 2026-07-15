@@ -631,6 +631,77 @@ body.menu-open .site-header {
         box-shadow 0.25s ease;
 }
 
+.project-preview-gallery {
+    padding: 24px;
+}
+
+.project-gallery {
+    display: grid;
+    width: 100%;
+    max-width: 340px;
+    gap: 14px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-gallery-item {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 12px 30px rgba(16, 24, 40, 0.12);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-gallery-item:first-child {
+    transform: rotate(-2deg) translateY(5px);
+}
+
+.project-gallery-item:last-child {
+    transform: rotate(2deg) translateY(-5px);
+}
+
+.project-gallery-item img {
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.project-gallery-label {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    padding: 6px 8px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: rgba(15, 23, 42, 0.82);
+    color: white;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    backdrop-filter: blur(8px);
+}
+
+.project-card:hover .project-gallery-item:first-child {
+    transform: rotate(-1deg) translateY(1px) scale(1.02);
+}
+
+.project-card:hover .project-gallery-item:last-child {
+    transform: rotate(1deg) translateY(-1px) scale(1.02);
+}
+
+.project-card:hover .project-gallery-item {
+    box-shadow: 0 16px 36px rgba(16, 24, 40, 0.16);
+}
+
 .project-card:hover .project-preview-image {
     transform: scale(1.025);
     box-shadow: 0 16px 36px rgba(16, 24, 40, 0.16);
@@ -1046,6 +1117,17 @@ body.menu-open .site-header {
     max-height: 170px;
     }
 
+   .project-preview-gallery {
+       padding: 20px;
+   }
+   
+   .project-gallery {
+       gap: 10px;
+   }
+   
+   .project-gallery-item img {
+       height: 120px;
+   }
     .hero-actions .button {
         width: 100%;
     }
