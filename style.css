@@ -487,6 +487,13 @@ body.menu-open .site-header {
     font-weight: 800;
 }
 
+.skill-icon svg {
+    width: 26px;
+    height: 26px;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
 .skill-card h3 {
     margin-bottom: 14px;
     font-size: 1.4rem;
