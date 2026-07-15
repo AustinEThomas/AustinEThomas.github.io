@@ -101,20 +101,16 @@ async function loadSiteData() {
 
         const data = await response.json();
 
-        document.getElementById("powerBiDashboards").textContent =
-            data.stats.powerBiDashboards;
-
-        document.getElementById("databaseTables").textContent =
-            data.stats.databaseTables;
-
-        document.getElementById("pythonStreamlitApps").textContent =
-            data.stats.pythonStreamlitApps;
+        updateSiteStats(data.stats);
+        renderProjects(data.projects);
     } catch (error) {
         console.error(error);
 
-        document.getElementById("powerBiDashboards").textContent = "6+";
-        document.getElementById("databaseTables").textContent = "20+";
-        document.getElementById("pythonStreamlitApps").textContent = "8+";
+        updateSiteStats({
+            powerBiDashboards: "6+",
+            databaseTables: "20+",
+            pythonStreamlitApps: "8+"
+        });
     }
 }
 
