@@ -1,9 +1,18 @@
 {
-  "stats": {
-    "powerBiDashboards": "6+",
-    "databaseTables": "20+",
-    "pythonStreamlitApps": "8+"
-  },
+  "stats": [
+    {
+      "value": "6+",
+      "label": "Power BI Dashboards"
+    },
+    {
+      "value": "20+",
+      "label": "Database Tables"
+    },
+    {
+      "value": "8+",
+      "label": "Python & Streamlit Apps"
+    }
+  ]
 
   "projects": [
     {
