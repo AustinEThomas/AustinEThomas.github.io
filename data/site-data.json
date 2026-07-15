@@ -61,16 +61,26 @@
     {
       "type": "APPLICATION DEVELOPMENT",
       "title": "Manufacturing Scheduler Tools",
-      "description": "A Streamlit application built to support manufacturing scheduling through machine rule management, scheduler validation, deployment review, and operational support utilities.",
+      "description": "A Streamlit application built to support manufacturing scheduling through machine rule management, scheduler validation, deployment review, and support utilities.",
       "tags": [
         "Python",
         "Streamlit",
         "SQL"
       ],
-      "previewType": "image",
+      "previewType": "image-gallery",
       "previewClass": "preview-three",
-      "image": "images/scheduler-rules-editor.png",
-      "imageAlt": "Manufacturing Scheduler Tools application showing machine rule management and scheduler validation modules",
+      "images": [
+        {
+          "src": "images/scheduler-rules-editor.png",
+          "alt": "Machine Rules Editor used to manage manufacturing scheduling rules",
+          "label": "Machine Rules"
+        },
+        {
+          "src": "images/scheduler-change-log.png",
+          "alt": "Scheduler Change Log used to review and validate scheduling changes",
+          "label": "Change Log"
+        }
+      ],
       "link": "https://github.com/AustinEThomas/manufacturing-scheduler-tools",
       "linkText": "View Project →"
     },
