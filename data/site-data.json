@@ -3,5 +3,124 @@
     "powerBiDashboards": "6+",
     "databaseTables": "20+",
     "pythonStreamlitApps": "8+"
-  }
+  },
+
+  "projects": [
+    {
+      "type": "BUSINESS INTELLIGENCE",
+      "title": "Sales Analytics Dashboard",
+      "description": "An interactive Power BI dashboard built to monitor sales performance, shipments, profitability, and year-over-year trends. The report uses Power Query, DAX, and a relational data model to deliver executive KPI reporting with dynamic filtering and time intelligence.",
+      "tags": [
+        "Power BI",
+        "DAX",
+        "Power Query",
+        "Excel"
+      ],
+      "previewType": "image",
+      "previewClass": "preview-one",
+      "image": "images/Sales_Analytics_Dashboard.png",
+      "imageAlt": "Sales Analytics Dashboard overview showing sales KPIs, shipment trends, goals, and gross margin",
+      "link": "https://github.com/AustinEThomas/sales-analytics-dashboard",
+      "linkText": "View Project →"
+    },
+
+    {
+      "type": "DATA ENGINEERING",
+      "title": "Paycor Workforce Reporting Integration",
+      "description": "Automated workforce reporting integrations that retrieve employee, labor, department, timecard, and payroll data and store it in MySQL databases hosted on Amazon RDS.",
+      "tags": [
+        "Python",
+        "REST API",
+        "MySQL",
+        "Amazon RDS"
+      ],
+      "previewType": "pipeline",
+      "previewClass": "preview-two",
+      "previewLabel": "Python + APIs",
+      "pipelineSteps": [
+        "API",
+        "Python",
+        "RDS"
+      ],
+      "link": "",
+      "linkText": ""
+    },
+
+    {
+      "type": "APPLICATION DEVELOPMENT",
+      "title": "Manufacturing Scheduler Control Center",
+      "description": "A centralized Streamlit platform supporting manufacturing scheduling, deployment validation, operational controls, conflict review, and missing-record analysis.",
+      "tags": [
+        "Python",
+        "Streamlit",
+        "MySQL",
+        "SQL"
+      ],
+      "previewType": "app-window",
+      "previewClass": "preview-three",
+      "previewLabel": "Streamlit",
+      "link": "",
+      "linkText": ""
+    },
+
+    {
+      "type": "AUTOMATION",
+      "title": "Production Scheduling Automation",
+      "description": "Automated manufacturing scheduling and validation workflows to reduce manual effort, improve consistency, and support production planning.",
+      "tags": [
+        "Python",
+        "SQL",
+        "Automation"
+      ],
+      "previewType": "pipeline",
+      "previewClass": "preview-two",
+      "previewLabel": "Python + SQL",
+      "pipelineSteps": [
+        "Orders",
+        "Logic",
+        "Schedule"
+      ],
+      "link": "",
+      "linkText": ""
+    },
+
+    {
+      "type": "BUSINESS INTELLIGENCE",
+      "title": "Customer Priority Dashboard",
+      "description": "A Power BI reporting solution that combines customer demand, open orders, inventory, and production data to help manufacturing teams prioritize work and improve operational visibility.",
+      "tags": [
+        "Power BI",
+        "SQL",
+        "MySQL",
+        "DAX"
+      ],
+      "previewType": "mini-dashboard",
+      "previewClass": "preview-one",
+      "previewLabel": "Power BI + SQL",
+      "link": "",
+      "linkText": ""
+    },
+
+    {
+      "type": "SYSTEM INTEGRATION",
+      "title": "TBE ERP Automation",
+      "description": "Multiple ERP API integrations supporting inventory, orders, shipments, scheduling, and operational reporting workflows.",
+      "tags": [
+        "Python",
+        "REST API",
+        "ERP",
+        "MySQL"
+      ],
+      "previewType": "pipeline",
+      "previewClass": "preview-three",
+      "previewLabel": "ERP APIs",
+      "pipelineSteps": [
+        "TBE",
+        "Python",
+        "Reports"
+      ],
+      "link": "",
+      "linkText": ""
+    }
+  ]
 }
