@@ -389,13 +389,11 @@ function escapeAttribute(value) {
     return escapeHtml(value);
 }
 
-loadSiteData();
-
 revealElements.forEach((element) => {
     revealObserver.observe(element);
 });
 
 // Run once when the page first loads.
-initializeRevealAnimations();
 loadSiteData();
+initializeRevealAnimations();
 updateActiveNavigation();
