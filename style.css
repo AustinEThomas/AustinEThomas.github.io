@@ -114,15 +114,23 @@ p {
     top: 0;
     left: 0;
     width: 100%;
+    isolation: isolate;
     border-bottom: 1px solid transparent;
     background: rgba(247, 248, 252, 0.86);
     backdrop-filter: blur(18px);
-    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
 }
 
 .site-header.scrolled {
     border-color: var(--border);
     box-shadow: 0 8px 28px rgba(16, 24, 40, 0.06);
+}
+
+body.menu-open .site-header {
+    background: var(--background);
 }
 
 .navbar {
@@ -911,28 +919,44 @@ p {
         transform: translateY(-7px) rotate(-45deg);
     }
 
-    .nav-links {
-        position: fixed;
-        top: 76px;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding: 28px 20px;
-        background: rgba(247, 248, 252, 0.98);
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(-10px);
-        transition: opacity 0.25s ease, transform 0.25s ease;
-    }
-
-    .nav-links.open {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
-    }
+   .nav-links {
+       position: fixed;
+       top: 76px;
+       right: 0;
+       bottom: 0;
+       left: 0;
+       z-index: 999;
+   
+       display: flex;
+       flex-direction: column;
+       align-items: stretch;
+       justify-content: flex-start;
+   
+       gap: 0;
+       padding: 28px 20px;
+   
+       overflow-y: auto;
+   
+       background: var(--background);
+   
+       opacity: 0;
+       visibility: hidden;
+       pointer-events: none;
+   
+       transform: translateY(-10px);
+   
+       transition:
+           opacity 0.25s ease,
+           transform 0.25s ease,
+           visibility 0.25s ease;
+   }
+   
+   .nav-links.open {
+       opacity: 1;
+       visibility: visible;
+       pointer-events: auto;
+       transform: translateY(0);
+   }
 
     .nav-links a {
         display: block;
