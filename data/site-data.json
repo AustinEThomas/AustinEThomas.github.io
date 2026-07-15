@@ -39,7 +39,7 @@
     {
       "type": "APPLICATION DEVELOPMENT",
       "title": "Manufacturing Scheduler Tools",
-      "description": "A Streamlit application built to support manufacturing scheduling through machine rule management, scheduler validation, deployment review, and support utilities.",
+      "description": "Streamlit applications built to support manufacturing scheduling through machine rule management, scheduler validation, deployment review, and support utilities.",
       "tags": [
         "Python",
         "Streamlit",
